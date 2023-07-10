@@ -13,16 +13,26 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\getting_started_1.1_hello_window">
-      <UniqueIdentifier>{ca7f20ac-1546-4b56-b650-4f0bdb8d571d}</UniqueIdentifier>
+    <Filter Include="Source Files\hello_triangle">
+      <UniqueIdentifier>{62c4791c-b0a9-4aa4-8dfc-b63453d66720}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="getting_started_1.1_hello_window.cpp">
-      <Filter>Source Files\getting_started_1.1_hello_window</Filter>
+    <ClCompile Include="hello_triangle.cpp">
+      <Filter>Source Files\hello_triangle</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="getting_started_1.1_hello_window.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
