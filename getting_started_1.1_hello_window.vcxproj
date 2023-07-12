@@ -133,7 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
-    <ClCompile Include="hello_triangle.cpp" />
+    <ClCompile Include="hello_triangle_excersise1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
