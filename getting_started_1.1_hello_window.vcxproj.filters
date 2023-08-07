@@ -16,17 +16,47 @@
     <Filter Include="Source Files\hello_triangle">
       <UniqueIdentifier>{62c4791c-b0a9-4aa4-8dfc-b63453d66720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{09e49acc-e512-4042-967e-941f4376a257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shader_files">
+      <UniqueIdentifier>{0e35f8c6-f10a-401d-bc5b-f418caee45d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textures">
+      <UniqueIdentifier>{3899903a-1295-401f-9f7c-d5d18006f3ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NewFilter1">
+      <UniqueIdentifier>{d34a14be-1ba5-496d-b1f3-a12839211c07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\textures\resources">
+      <UniqueIdentifier>{2d32786e-e784-4889-a5f8-c881b5d674df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hello_triangle_excersise1.cpp">
-      <Filter>Source Files\hello_triangle</Filter>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tetrahedron.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glut.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\glut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -34,5 +64,33 @@
     <ResourceCompile Include="getting_started_1.1_hello_window.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="shader.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="texture.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="texture.vs">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\container.jpg">
+      <Filter>Source Files\textures\resources</Filter>
+    </Image>
+    <Image Include="..\..\Libros\OpenGL\texture\container.jpg">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\Libros\OpenGL\texture\awesomeface.png">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="..\..\Libros\OpenGL\texture\container.png">
+      <Filter>Source Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

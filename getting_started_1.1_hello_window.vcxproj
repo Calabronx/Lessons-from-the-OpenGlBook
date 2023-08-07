@@ -133,13 +133,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
-    <ClCompile Include="hello_triangle_excersise1.cpp" />
+    <ClCompile Include="glut.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="tetrahedron.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Downloads\glut.h" />
+    <ClInclude Include="..\..\..\Downloads\stb_image.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="getting_started_1.1_hello_window.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
+    <None Include="texture.fs" />
+    <None Include="texture.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\container.jpg" />
+    <Image Include="..\..\Libros\OpenGL\texture\awesomeface.png" />
+    <Image Include="..\..\Libros\OpenGL\texture\container.jpg" />
+    <Image Include="..\..\Libros\OpenGL\texture\container.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
