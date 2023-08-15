@@ -134,12 +134,15 @@
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
     <ClCompile Include="glut.cpp" />
+    <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="stb_image.cpp" />
-    <ClCompile Include="tetrahedron.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\glut.h" />
     <ClInclude Include="..\..\..\Downloads\stb_image.h" />
+    <ClInclude Include="..\GLM\glm\glm\glm.hpp" />
+    <ClInclude Include="..\GLM\glm\glm\gtc\matrix_transform.hpp" />
+    <ClInclude Include="..\GLM\glm\glm\gtc\type_ptr.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="shader.h" />
   </ItemGroup>
@@ -147,10 +150,13 @@
     <ResourceCompile Include="getting_started_1.1_hello_window.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="coordinate.fs" />
+    <None Include="coordinate.vs" />
     <None Include="shader.fs" />
     <None Include="shader.vs" />
     <None Include="texture.fs" />
     <None Include="texture.vs" />
+    <None Include="transform.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Downloads\container.jpg" />

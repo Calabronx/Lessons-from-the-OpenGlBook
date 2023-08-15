@@ -99,6 +99,9 @@ public:
 		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 	}
 
+	/*void setMat4(const std::string& name, glm::mat4 matriz) const {
+		glad_glUniformMatrix4fv()
+	}*/
 	/*void use();
 
 	void setBool(const std::string& name, bool value) const;
