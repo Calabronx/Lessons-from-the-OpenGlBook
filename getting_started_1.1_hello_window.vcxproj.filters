@@ -42,7 +42,7 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graphic.cpp">
+    <ClCompile Include="CoordinateApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -98,6 +98,16 @@ public:
 	{
 		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
 	}
+	//glm::mat4 model
+	void setMat4(glm::mat4 matrice4, const GLchar* name) {
+		unsigned int programLoc = glGetUniformLocation(ID, name);
+		if (name == "view") {
+			glUniformMatrix4fv(programLoc, 1, GL_FALSE, &matrice4[0][0]);
+		}
+		else {
+			glUniformMatrix4fv(programLoc, 1, GL_FALSE, glm::value_ptr(matrice4));
+		}
+	}
 
 	/*void setMat4(const std::string& name, glm::mat4 matriz) const {
 		glad_glUniformMatrix4fv()
