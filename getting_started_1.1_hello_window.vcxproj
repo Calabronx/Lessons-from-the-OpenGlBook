@@ -133,7 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
-    <ClCompile Include="CoordinateApp.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="glut.cpp" />
     <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
