@@ -112,16 +112,16 @@ int main()
 		-0.5f,  0.5f, -0.5f,  0.0f, 1.0f
 	};
 	glm::vec3 cubePositions[] = {
-		 glm::vec3(0.0f,  0.0f,  0.0f),
+		glm::vec3(0.0f,  0.0f,  0.0f),
 		glm::vec3(2.0f,  5.0f, -15.0f),
-		glm::vec3(0.0f, 1.0f, 0.0f),
-		/*glm::vec3(0.0f,  1.0f,  0.0f)*/
-		/*glm::vec3(2.4f, -0.4f, -3.5f),
+		glm::vec3(-1.5f, -2.2f, -2.5f),
+		glm::vec3(-3.8f, -2.0f, -12.3f),
+		glm::vec3(2.4f, -0.4f, -3.5f),
 		glm::vec3(-1.7f,  3.0f, -7.5f),
 		glm::vec3(1.3f, -2.0f, -2.5f),
 		glm::vec3(1.5f,  2.0f, -2.5f),
 		glm::vec3(1.5f,  0.2f, -1.5f),
-		glm::vec3(-1.3f,  1.0f, -1.5f)*/
+		glm::vec3(-1.3f,  1.0f, -1.5f)
 
 	};
 
@@ -189,7 +189,7 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-	data = stbi_load("C:/Users/sebas/Documents/Libros/OpenGL/texture/brand.png", &width, &height, &nrChannels, 0);
+	data = stbi_load("C:/Users/sebas/Documents/Libros/OpenGL/texture/guts.png", &width, &height, &nrChannels, 0);
 
 	if (data)
 	{
@@ -211,15 +211,6 @@ int main()
 	ourShader.setInt("texture1", 0);
 	ourShader.setInt("texture2", 1);
 
-	const float matInitialPos = 1.0f;
-	const float MAX_UP = 6.0f;
-	const float MIN_DOWN = 12.0f;
-
-	float perspectiveDistance = 105.0f;
-	float translationSpeed = 0.3f;
-
-	bool fowardMax = false;
-	bool maxLimit = false;
 
 
 	// render loop
@@ -232,6 +223,7 @@ int main()
 
 		// render
 		// ------
+		//glEnable(GL_DEPTH_TEST);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -244,15 +236,6 @@ int main()
 		// activate shader
 		ourShader.use();
 
-
-		/**
-		OBJ : hacer que el primer y tercer cubo roten en los ejes con el 3 cubo en el medio
-		begin
-			rotar en el eje y el cubo1
-			rotar en el eje x el cubo 2
-			cubo 3 permanece en el medio
-		end
-		**/
 		// create transformations
 		const float radius = 15.0f;
 		float currentFrame = glfwGetTime();
@@ -261,89 +244,55 @@ int main()
 
 		float camX = sin(glfwGetTime()) * radius;
 		float camZ = cos(glfwGetTime()) * radius;
-
+		
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 		ourShader.setMat4(projection, "projection");
 
 		glm::mat4 view = camera.GetViewMatrix();
 		ourShader.setMat4(view, "view");
-		// pass them to the shaders (3 different ways)
-		// 
-		// render container
+
+		glm::vec3 direction;
+
+		// render boxes
 		glBindVertexArray(VAO);
 
-
-		for (unsigned int i = 0; i < 3; i++) {
+		for (unsigned int i = 0; i < 10; i++) {
 			glm::mat4 model = glm::mat4(1.0f);
 			model = glm::translate(model, cubePositions[i]);
-			float deltaTime = (float)glfwGetTime();
 			float angle = 20.0f * i;
-			float upDirection = deltaTime * i;
-			float downDirection = deltaTime;
-			float upTranslation = deltaTime;
-			float foward = deltaTime * i;
-			float centerCubePos = 0.0f;
-			float lastPosY = 0.0f;
-
 			if (i % 3 == 0) {
-				model = glm::rotate(model, glm::radians(122.f), glm::vec3(77.0f, 3.3f, 11.5f));
-				angle = (float)glfwGetTime() * 55.0f;
-				centerCubePos = angle;
-			}
-			else {
-				if (!maxLimit) {
-					upTranslation = deltaTime;
-					model = glm::translate(model, glm::vec3(0.0f, upTranslation, 0.0f));
-					upDirection += upTranslation;
-					lastPosY = upDirection;
-					if (upDirection >= MAX_UP) {
-						maxLimit = true;
-					}
-				}
-				else {
-					float downTranslation = deltaTime * translationSpeed;
-					float progressive = upDirection--;
-					model = glm::translate(model, glm::vec3(0.0f, -downTranslation, 0.0f));
-					downDirection -= downTranslation;
-					lastPosY = downDirection;
-					if (downDirection >= MIN_DOWN) {
-						maxLimit = false;
-						upDirection = 0.0f;
-						upTranslation = 0.0f;
-						glfwSetTime(0.0f);
-					}
-				}
-
-				if (foward <= -5.0f) {
-					//if(foward <=-5.0f)
-					foward = 0.0f;
-				}
-
-				//model = glm::translate(model, glm::vec3(0.0f,lastPosY * translationSpeed, 0.0f));
-				angle = (float)glfwGetTime() * 188.0f;
-				std::cout << "time going up: " << upDirection << std::endl;
-				std::cout << "time going DOWN: " << downDirection << std::endl;
-				std::cout << "time going foward: " << foward << std::endl;
+				angle = (float)glfwGetTime() * 25.0f;
 			}
 			model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+			//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 			ourShader.setMat4(model, "model");
 
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 
+		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+		// -------------------------------------------------------------------------------
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 
 	}
 
+	// optional: de-allocate all resources once they've outlived their purpose:
+	// ------------------------------------------------------------------------
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
 
+	// glfw: terminate, clearing all previously allocated GLFW resources.
+	// ------------------------------------------------------------------
 	glfwTerminate();
 	return 0;
 }
 
+// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+// ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow* window)
 {
 	const float cameraSpeed = 2.5f * deltaTime;
@@ -390,3 +339,4 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn) {
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
 	camera.ProcessMouseScroll(static_cast<float>(yoffset));
 }
+
