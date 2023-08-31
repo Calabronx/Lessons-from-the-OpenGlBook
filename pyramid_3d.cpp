@@ -1,6 +1,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+
 #include "shader.h"
 
 #include <iostream>
@@ -10,6 +13,8 @@ void processInput(GLFWwindow* window);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+
+const float rotationAngle = 1.0f;
 
 int main() {
 	glfwInit();
@@ -28,6 +33,7 @@ int main() {
 		glfwTerminate();
 		return -1;
 	}
+
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
@@ -35,17 +41,20 @@ int main() {
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
+	//glEnable(GL_DEPTH_TEST); descomentar al renderizar la piramide 3D
 
-	Shader shader("pyramid_shader.fs", "pyramid_shader.vs");
+	Shader shader("pyramid_shader.vs", "pyramid_shader.fs");
 
-	float vertices[] = {
-		-0.5f, -0.5f, 0.0f, // left  
-		 0.5f, -0.5f, 0.0f, // right 
-		 0.0f,  0.5f, 0.0f  // top   
+	float vertices[] = {  
+	     0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,
+		 0.0f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f
+		
 	};
 
 	float indices[] = {
-		0,1,3
+		0,1,3,
+		1,2,3
 	};
 
 	unsigned int VBO, VAO, EBO;
@@ -61,11 +70,11 @@ int main() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	/*glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-	glEnableVertexAttribArray(1);*/
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
@@ -76,8 +85,22 @@ int main() {
 		glClearColor(0.1f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//shader.use();
+
+		glm::mat4 model = glm::mat4(1.0f);
+		glm::mat4 view = glm::mat4(1.0f);
+		glm::mat4 projection = glm::mat4(1.0f);
+
+		model = glm::rotate(model, (float)glfwGetTime(), glm::vec3(0.0f, rotationAngle, 0.0f));
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+		
+		shader.use();
+		shader.setMat4(model, "model");
+		shader.setMat4(view, "view");
+		shader.setMat4(projection, "projection");
+
 		glBindVertexArray(VAO);
+
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		//glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
