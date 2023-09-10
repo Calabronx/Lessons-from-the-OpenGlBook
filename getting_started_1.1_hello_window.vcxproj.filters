@@ -31,6 +31,12 @@
     <Filter Include="Source Files\textures\resources">
       <UniqueIdentifier>{2d32786e-e784-4889-a5f8-c881b5d674df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pyramid3D">
+      <UniqueIdentifier>{ad79f4b0-70d4-4a26-835f-100c78c0d4c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pyramid3D\shaders">
+      <UniqueIdentifier>{b80fbfd7-6805-42b7-9c45-1663bfb52dc7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
@@ -42,7 +48,7 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CoordinateApp.cpp">
+    <ClCompile Include="frammebuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,6 +104,12 @@
     </None>
     <None Include="coordinate.fs">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="pyramid_shader.fs">
+      <Filter>Source Files\pyramid3D</Filter>
+    </None>
+    <None Include="pyramid_shader.vs">
+      <Filter>Source Files\pyramid3D</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
