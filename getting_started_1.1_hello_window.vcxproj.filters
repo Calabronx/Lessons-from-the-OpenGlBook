@@ -51,6 +51,9 @@
     <ClCompile Include="frammebuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="framebuffer.fs">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -110,6 +113,9 @@
     </None>
     <None Include="pyramid_shader.vs">
       <Filter>Source Files\pyramid3D</Filter>
+    </None>
+    <None Include="framebuffer.vs">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

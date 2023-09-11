@@ -135,6 +135,7 @@
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
     <ClCompile Include="frammebuffer.cpp" />
     <ClCompile Include="glut.cpp" />
+    <ClCompile Include="framebuffer.fs" />
     <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
   <ItemGroup>
     <None Include="coordinate.fs" />
     <None Include="coordinate.vs" />
+    <None Include="framebuffer.vs" />
     <None Include="pyramid_shader.fs" />
     <None Include="pyramid_shader.vs" />
     <None Include="shader.fs" />
