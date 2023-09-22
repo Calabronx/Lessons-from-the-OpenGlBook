@@ -48,10 +48,7 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="frammebuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="framebuffer.fs">
+    <ClCompile Include="text_rendering.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="camera.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ft2build.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -114,7 +114,10 @@
     <None Include="pyramid_shader.vs">
       <Filter>Source Files\pyramid3D</Filter>
     </None>
-    <None Include="framebuffer.vs">
+    <None Include="text_renderer.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="text_renderer.frag">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

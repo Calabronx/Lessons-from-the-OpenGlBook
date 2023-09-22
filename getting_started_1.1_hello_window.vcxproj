@@ -71,8 +71,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\sebas\Documents\Libros\OpenGL\glad\glad\include;C:\Users\sebas\Documents\Libros\OpenGL\glfw-3.3.8\glfw-3.3.8\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\GLFW;C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window;C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\freetype-2.13.2\include;C:\Users\sebas\Documents\Libros\OpenGL\glad\glad\include;C:\Users\sebas\Documents\Libros\OpenGL\glfw-3.3.8\glfw-3.3.8\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\sebas\Documents\Libros\OpenGL\glfw-3.3.8\glfw-3.3.8\build\src\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\GLFW;C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window;C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\freetype-2.13.2\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +115,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib; glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,14 +133,15 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\sebas\Documents\C++Mods\getting_started_1.1_hello_window\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib; glfw3.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
-    <ClCompile Include="frammebuffer.cpp" />
     <ClCompile Include="glut.cpp" />
-    <ClCompile Include="framebuffer.fs" />
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="text_rendering.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\glut.h" />
@@ -145,6 +150,7 @@
     <ClInclude Include="..\GLM\glm\glm\gtc\matrix_transform.hpp" />
     <ClInclude Include="..\GLM\glm\glm\gtc\type_ptr.hpp" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="ft2build.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="shader.h" />
   </ItemGroup>
@@ -154,13 +160,14 @@
   <ItemGroup>
     <None Include="coordinate.fs" />
     <None Include="coordinate.vs" />
-    <None Include="framebuffer.vs" />
     <None Include="pyramid_shader.fs" />
     <None Include="pyramid_shader.vs" />
     <None Include="shader.fs" />
     <None Include="shader.vs" />
     <None Include="texture.fs" />
     <None Include="texture.vs" />
+    <None Include="text_renderer.frag" />
+    <None Include="text_renderer.vs" />
     <None Include="transform.vs" />
   </ItemGroup>
   <ItemGroup>

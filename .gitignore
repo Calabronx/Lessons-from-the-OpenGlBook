@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/lib
+/GLFW
+/freetype-2.13.2
+/freetype
+/fonts/arial
