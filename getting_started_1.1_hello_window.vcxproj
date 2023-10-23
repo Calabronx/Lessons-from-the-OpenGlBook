@@ -140,8 +140,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
     <ClCompile Include="glut.cpp" />
+    <ClCompile Include="instancing.cpp" />
     <ClCompile Include="stb_image.cpp" />
-    <ClCompile Include="text_rendering.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Downloads\glut.h" />
@@ -160,6 +160,8 @@
   <ItemGroup>
     <None Include="coordinate.fs" />
     <None Include="coordinate.vs" />
+    <None Include="instancing.frag" />
+    <None Include="instancing.vs" />
     <None Include="pyramid_shader.fs" />
     <None Include="pyramid_shader.vs" />
     <None Include="shader.fs" />

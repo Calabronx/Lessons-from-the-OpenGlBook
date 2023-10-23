@@ -111,6 +111,10 @@ public:
 		}
 	}
 
+	void setVec2(const std::string& name, glm::vec2 &value) const {
+		glUniform2fv(glGetUniformLocation(ID, name.c_str()), 1, &value[0]);
+	}
+
 };
 
 #endif
