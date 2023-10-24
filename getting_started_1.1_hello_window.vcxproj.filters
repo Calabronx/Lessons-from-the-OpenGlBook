@@ -48,7 +48,7 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="instancing.cpp">
+    <ClCompile Include="instanced_arrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -124,6 +124,9 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="instancing.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="instancing_arr.vs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
