@@ -37,6 +37,9 @@
     <Filter Include="Source Files\pyramid3D\shaders">
       <UniqueIdentifier>{b80fbfd7-6805-42b7-9c45-1663bfb52dc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\mesh">
+      <UniqueIdentifier>{a970ba09-ab1a-479b-b39e-4a946cc389c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="ft2build.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Source Files\mesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

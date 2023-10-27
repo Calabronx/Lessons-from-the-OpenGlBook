@@ -151,6 +151,7 @@
     <ClInclude Include="..\GLM\glm\glm\gtc\type_ptr.hpp" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="ft2build.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="shader.h" />
   </ItemGroup>
