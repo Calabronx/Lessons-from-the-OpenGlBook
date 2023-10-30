@@ -49,6 +49,9 @@
     <Filter Include="Source Files\camera">
       <UniqueIdentifier>{6f835e18-5b26-4068-aa94-aa4818109d74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\asteroid">
+      <UniqueIdentifier>{f821a79e-054b-441f-b319-439b1cc53e26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
@@ -60,8 +63,8 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model_loading.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="asteroids_instanced.cpp">
+      <Filter>Source Files\asteroid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +164,9 @@
     </None>
     <None Include="model_loading.frag">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="asteroids_instanced.vs">
+      <Filter>Source Files\asteroid</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
