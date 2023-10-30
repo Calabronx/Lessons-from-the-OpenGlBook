@@ -40,6 +40,15 @@
     <Filter Include="Source Files\mesh">
       <UniqueIdentifier>{a970ba09-ab1a-479b-b39e-4a946cc389c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{a703da34-08d5-4a94-a973-0478a4e696f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources">
+      <UniqueIdentifier>{8e2b05d3-ab30-439d-8ec7-6f9e9be7b4cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\camera">
+      <UniqueIdentifier>{6f835e18-5b26-4068-aa94-aa4818109d74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c">
@@ -51,7 +60,7 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="instanced_arrays.cpp">
+    <ClCompile Include="model_loading.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -85,6 +94,18 @@
     </ClInclude>
     <ClInclude Include="mesh.h">
       <Filter>Source Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>Source Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="file_system.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera_movement.h">
+      <Filter>Source Files\camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +156,12 @@
     <None Include="instancing_arr.vs">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="model_loading.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="model_loading.frag">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Downloads\container.jpg">
@@ -149,5 +176,10 @@
     <Image Include="..\..\Libros\OpenGL\texture\container.png">
       <Filter>Source Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="resources\backpack\backpack.obj">
+      <Filter>Source Files\resources</Filter>
+    </Object>
   </ItemGroup>
 </Project>
