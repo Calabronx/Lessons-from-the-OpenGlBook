@@ -15,6 +15,7 @@
 class Model {
 public:
 	vector<Texture> textures_loaded;
+	vector<Mesh> meshes;
 
 	Model(const char* path)
 	{
@@ -25,7 +26,6 @@ public:
 			meshes[i].Draw(shader);
 	}
 private:
-	vector<Mesh> meshes;
 	string directory;
 
 	void loadModel(string path) {

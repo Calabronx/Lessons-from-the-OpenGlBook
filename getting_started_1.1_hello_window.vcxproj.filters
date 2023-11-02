@@ -166,7 +166,13 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="asteroids_instanced.vs">
-      <Filter>Source Files\asteroid</Filter>
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="planet.frag">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="planet.vs">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

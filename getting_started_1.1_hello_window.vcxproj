@@ -171,6 +171,8 @@
     <None Include="instancing_arr.vs" />
     <None Include="model_loading.frag" />
     <None Include="model_loading.vs" />
+    <None Include="planet.frag" />
+    <None Include="planet.vs" />
     <None Include="pyramid_shader.fs" />
     <None Include="pyramid_shader.vs" />
     <None Include="shader.fs" />
