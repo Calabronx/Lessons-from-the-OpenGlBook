@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Libros\OpenGL\glad\glad\src\glad.c" />
-    <ClCompile Include="asteroids_instanced.cpp" />
+    <ClCompile Include="Diamond3DProject.cpp" />
     <ClCompile Include="glut.cpp" />
     <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
@@ -166,6 +166,8 @@
     <None Include="asteroids_instanced.vs" />
     <None Include="coordinate.fs" />
     <None Include="coordinate.vs" />
+    <None Include="diamond.fs" />
+    <None Include="diamond.vs" />
     <None Include="instancing.frag" />
     <None Include="instancing.vs" />
     <None Include="instancing_arr.vs" />
@@ -175,6 +177,8 @@
     <None Include="planet.vs" />
     <None Include="pyramid_shader.fs" />
     <None Include="pyramid_shader.vs" />
+    <None Include="rectangle.fs" />
+    <None Include="rectangle.vs" />
     <None Include="shader.fs" />
     <None Include="shader.vs" />
     <None Include="texture.fs" />
@@ -182,6 +186,8 @@
     <None Include="text_renderer.frag" />
     <None Include="text_renderer.vs" />
     <None Include="transform.vs" />
+    <None Include="triangle_shader.fs" />
+    <None Include="triangle_shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Downloads\container.jpg" />

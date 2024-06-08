@@ -51,7 +51,8 @@ public:
 	}
 
 	glm::mat4 GetViewMatrix() {
-		return calculate_lookAt_matrix(Position, Position + Front, Up);
+		//return calculate_lookAt_matrix(Position, Position + Front, Up);
+		return glm::lookAt(Position, Position + Front, Up);
 	}
 
 	void ProcessKeyboard(Camera_Movement direction, float deltaTime) {

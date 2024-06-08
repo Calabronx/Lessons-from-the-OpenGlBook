@@ -17,11 +17,11 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 void processInput(GLFWwindow* window);
 
 // settings
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+const unsigned int SCR_WIDTH = 1280;
+const unsigned int SCR_HEIGHT = 800;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(51.1724f, 15.0f, -230.72f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -85,7 +85,7 @@ int main()
     Model rock("resources/rock/rock.obj");
     Model planet("resources/planet/planet.obj");
 
-    unsigned int amount = 100000;
+    unsigned int amount = 25000; // cantidad de asteroides
     glm::mat4* modelMatrices;
     modelMatrices = new glm::mat4[amount];
     srand(glfwGetTime()); // initialize random sed
@@ -107,7 +107,7 @@ int main()
         model = glm::scale(model, glm::vec3(scale));
         // 3. rotation: add random rotation around a (semi) randomly picked rotation axis vector
         float rotAngle = (rand() % 360);
-        model = glm::rotate(model, rotAngle, glm::vec3(0.4f, 0.6f, 0.8f));
+        model = glm::rotate(model, rotAngle * i, glm::vec3(0.4f, 0.6f, 0.8f));
         //4. now add to list of matrices
         modelMatrices[i] = model;
     }
@@ -157,6 +157,11 @@ int main()
         // -----
         processInput(window);
 
+        float cameraX = camera.Position.x;
+        float cameraY = camera.Position.y;
+        float cameraZ = camera.Position.z;
+
+        std::cout << "camera position : X:" << cameraX << " Y:" << cameraY << " Z:" << cameraZ << std::endl;
         // render
         // ------
         glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
@@ -220,6 +225,8 @@ void processInput(GLFWwindow* window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+        camera.ProcessKeyboard(SPACE, deltaTime);
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes

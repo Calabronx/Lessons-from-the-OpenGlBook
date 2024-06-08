@@ -63,8 +63,8 @@
     <ClCompile Include="glut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="asteroids_instanced.cpp">
-      <Filter>Source Files\asteroid</Filter>
+    <ClCompile Include="Diamond3DProject.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +172,24 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="planet.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="triangle_shader.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="triangle_shader.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="rectangle.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="rectangle.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="diamond.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="diamond.fs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
